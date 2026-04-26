@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head> </head>
+  <body>
+    <div class="box">
+      <h2>Movie Guess</h2>
+
+      <select id="level">
+        <option value="">All</option>
+        <option>Easy</option>
+        <option>Medium</option>
+        <option>Hard</option>
+      </select>
+
+      <button onclick="loadPuzzle()">Get Puzzle</button>
+
+      <p id="question"></p>
+
+      <input id="answer" placeholder="Your Guess" />
+
+      <button onclick="checkAnswer()">Submit</button>
+
+      <button id="hintBtn" onclick="showHint()" style="display: none">
+        Hint
+      </button>
+
+      <p id="hint"></p>
+      <p id="result"></p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
