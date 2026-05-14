@@ -328,3 +328,27 @@ body {
     padding: 30px;
   }
 }
+
+.hint-button {
+  background-color: #1e293b;
+  color: white;
+  border: 1px solid #3b82f6;
+
+  width: 700px;
+  max-width: 90%;
+
+  display: block;
+  margin: 15px auto;
+
+  padding: 14px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-size: 15px;
+}
+
+.hint-button:hover {
+  background-color: #334155;
+}

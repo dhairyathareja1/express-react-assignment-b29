@@ -122,6 +122,7 @@ function GamePage() {
       {/* Hint button */}
       {wrongCount >= hintLimit && (
         <button
+          className="hint-button"
           onClick={() => {
             setShowHint(true);
           }}
