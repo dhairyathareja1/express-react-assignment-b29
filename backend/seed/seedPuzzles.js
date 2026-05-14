@@ -48,7 +48,7 @@ const puzzles = [
       "A man runs through locked doors that were never meant to open, collecting impossible tasks like they are apologies he must keep making.",
     hint: "Tom Cruise keeps running from explosions and impossible odds.",
     difficulty: "Easy",
-    answer: "Mission: Impossible",
+    answer: "Mission Impossible",
   },
 
   {
@@ -123,5 +123,22 @@ const puzzles = [
     answer: "Dilwale Dulhania Le Jayenge",
   },
 ];
+
+async function seedPuzzles() {
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+
+    await Puzzle.deleteMany();
+
+    await Puzzle.insertMany(puzzles);
+
+    console.log("Puzzles added");
+
+    process.exit();
+  } catch (error) {
+    console.log(error);
+    process.exit(1);
+  }
+}
 
 seedPuzzles();
