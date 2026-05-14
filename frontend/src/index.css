@@ -97,8 +97,6 @@ body {
   text-align: center;
 }
 
-/* ================= NAVBAR ================= */
-
 .navbar {
   height: 70px;
   background-color: #0f172a;
@@ -149,16 +147,11 @@ body {
 .nav-right button {
   background-color: #dc2626;
   color: white;
-
   border: none;
   border-radius: 7px;
-
   padding: 7px 12px;
-
   font-size: 12px;
-
   cursor: pointer;
-
   transition: 0.2s;
 }
 
