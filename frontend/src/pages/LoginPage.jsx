@@ -28,36 +28,36 @@ function LoginPage() {
   }
 
   return (
-    <div>
-      <h1>Login</h1>
-      {/* Error message */}
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      {/* Login form */}
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(event) => {
-            setEmail(event.target.value);
-          }}
-        />
-        <br />
-        <br />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(event) => {
-            setPassword(event.target.value);
-          }}
-        />
-        <br />
-        <br />
-        <button type="submit">Login</button>
-      </form>
-      <br />
-      <Link to="/signup">No account? Sign up</Link>
+    <div className="auth-page">
+      <div className="auth-card">
+        <h1>Login</h1>
+
+        {error && <p className="error-text">{error}</p>}
+
+        <form onSubmit={handleSubmit}>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(event) => {
+              setEmail(event.target.value);
+            }}
+          />
+
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(event) => {
+              setPassword(event.target.value);
+            }}
+          />
+
+          <button type="submit">Login</button>
+        </form>
+
+        <Link to="/signup">No account? Sign up</Link>
+      </div>
     </div>
   );
 }

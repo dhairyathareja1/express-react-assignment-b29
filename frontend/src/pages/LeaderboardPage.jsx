@@ -18,26 +18,21 @@ function LeaderboardPage() {
   }, []);
 
   return (
-    <div>
-      {/* Back button */}
+    <div className="leaderboard-page">
       <Link to="/game">Back to Game</Link>
 
       <h1>Leaderboard</h1>
 
-      {/* No users */}
       {leaders.length === 0 && <p>No leaderboard data found</p>}
 
-      {/* User list */}
       {leaders.map((user, index) => {
         return (
-          <div key={user._id}>
+          <div className="leaderboard-card" key={user._id}>
             <h3>Rank #{index + 1}</h3>
 
             <p>Username: {user.username}</p>
 
             <p>Score: {user.score}</p>
-
-            <hr />
           </div>
         );
       })}

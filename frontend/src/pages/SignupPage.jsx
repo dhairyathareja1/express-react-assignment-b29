@@ -29,56 +29,45 @@ function SignupPage() {
   }
 
   return (
-    <div>
-      <h1>Sign Up</h1>
+    <div className="auth-page">
+      <div className="auth-card">
+        <h1>Sign Up</h1>
 
-      {/* Error message */}
-      {error && <p style={{ color: "red" }}>{error}</p>}
+        {error && <p className="error-text">{error}</p>}
 
-      {/* Signup form */}
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(event) => {
-            setUsername(event.target.value);
-          }}
-        />
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(event) => {
+              setUsername(event.target.value);
+            }}
+          />
 
-        <br />
-        <br />
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(event) => {
+              setEmail(event.target.value);
+            }}
+          />
 
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(event) => {
-            setEmail(event.target.value);
-          }}
-        />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(event) => {
+              setPassword(event.target.value);
+            }}
+          />
 
-        <br />
-        <br />
+          <button type="submit">Sign Up</button>
+        </form>
 
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(event) => {
-            setPassword(event.target.value);
-          }}
-        />
-
-        <br />
-        <br />
-
-        <button type="submit">Sign Up</button>
-      </form>
-
-      <br />
-
-      <Link to="/login">Already have an account? Login</Link>
+        <Link to="/login">Already have an account? Login</Link>
+      </div>
     </div>
   );
 }

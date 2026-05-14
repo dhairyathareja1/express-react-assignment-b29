@@ -66,20 +66,21 @@ function GamePage() {
   }
 
   return (
-    <div>
+    <div className="game-page">
       {/* Navbar */}
-      <nav>
-        <h3>Welcome, {user.username}</h3>
+      <nav className="navbar">
+        <div className="nav-left">
+          <h3>Movie Game</h3>
 
-        <Link to="/leaderboard">Leaderboard</Link>
+          <p>Welcome, {user.username}</p>
+        </div>
 
-        <br />
-        <br />
+        <div className="nav-right">
+          <Link to="/leaderboard">Leaderboard</Link>
 
-        <button onClick={logout}>Logout</button>
+          <button onClick={logout}>Logout</button>
+        </div>
       </nav>
-
-      <hr />
 
       {/* Difficulty filter */}
       <select
@@ -94,13 +95,10 @@ function GamePage() {
         <option value="Hard">Hard</option>
       </select>
 
-      <br />
-      <br />
-
       {/* Puzzle */}
-      <h3>Difficulty: {puzzle.difficulty}</h3>
+      <h3 className="difficulty-text">Difficulty: {puzzle.difficulty}</h3>
 
-      <p>"{puzzle.description}"</p>
+      <p className="puzzle-card">"{puzzle.description}"</p>
 
       {/* Guess input */}
       <input
@@ -117,10 +115,9 @@ function GamePage() {
         }}
       />
 
-      <button onClick={handleGuess}>Guess</button>
-
-      <br />
-      <br />
+      <button className="primary-button" onClick={handleGuess}>
+        Guess
+      </button>
 
       {/* Hint button */}
       {wrongCount >= hintLimit && (
@@ -134,15 +131,15 @@ function GamePage() {
       )}
 
       {/* Hint */}
-      {showHint && <p>Hint: {puzzle.hint}</p>}
+      {showHint && <p className="hint-box">Hint: {puzzle.hint}</p>}
 
       {/* Message */}
-      {message && <p>{message}</p>}
-
-      <br />
+      {message && <p className="message-box">{message}</p>}
 
       {/* Skip puzzle */}
-      <button onClick={fetchPuzzle}>Skip Puzzle</button>
+      <button className="secondary-button" onClick={fetchPuzzle}>
+        Skip Puzzle
+      </button>
     </div>
   );
 }
